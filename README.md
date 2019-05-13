@@ -21,24 +21,20 @@ students = [
   }
 ]
 
-upper_case_full_names = []
+
+
 
 ```
 
 ### Answer
 
-```rb
-
-upper_case_full_names =[{students[0][:first_name].upcase  students[0][:last_name].upcase},
-                        {students[1][:first_name].upcase  students[1][:last_name].upcase},
-                        {students[2][:first_name].upcase  students[2][:last_name].upcase}
-
-]
+students.each do |hash|
+upper_case_full_names.push (hash[:first_name].upcase + " " hash[:last_name].upcase)
+end
 
 
-students.values_at(":first_name" , ":last_name")
 
-.upcase
+
 
 [ 'AHMED ALTHAGAFI', 'NORAH ALSHEHRI', 'HANEEN ALGHAMDI' ]
 
@@ -156,12 +152,29 @@ people = [
   }
 ]
 
+people.each do |hash|
+new_person = {name:"" , coffee_average: 0}
+new_person[:name] = hash[:name]
+total_amount = 0 
+count = 0
+p hash [:name]
+hash[:transactions].each do |t|
+if t[:type] == "COFFEE"
+ total_amount +=t[:amount]
+ count += 1
+end 
+end
+new_person[:coffee_average] = total_amount / count;
+end 
 
 coffee_average_per_person = []
 
 ```
 
 ### Answer
+
+
+
 
 ```rb
 
@@ -172,6 +185,16 @@ coffee_average_per_person = []
 ]
 
 ```
+
+
+
+
+
+
+
+
+
+
 
 ## 4. Find the most expensive product for each store, with the store name:
 
@@ -233,23 +256,5 @@ most_expensive_products_by_store = []
   {store_name: "Souq", most_expensive_product: { description: "Sapphire", price: 899.33}}
 ]
 ```
-
-# Bonus
-
-Write an infinite loop that will make you add all the your friends in the students list and after each add will ask if you want to quit the loop (yes/no) if the user choose no print all the students array
-
-### Answer
-
-```
-
->add a student
-Sumayah Bahkeem
->Do you want to continue ? (y/n)
-y
->add a student
-Huda Binzaqr
->Do you want to continue ? (y/n)
-y
->add a student
 
 ```
