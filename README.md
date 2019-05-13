@@ -29,6 +29,17 @@ upper_case_full_names = []
 
 ```rb
 
+upper_case_full_names =[{students[0][:first_name].upcase  students[0][:last_name].upcase},
+                        {students[1][:first_name].upcase  students[1][:last_name].upcase},
+                        {students[2][:first_name].upcase  students[2][:last_name].upcase}
+
+]
+
+
+students.values_at(":first_name" , ":last_name")
+
+.upcase
+
 [ 'AHMED ALTHAGAFI', 'NORAH ALSHEHRI', 'HANEEN ALGHAMDI' ]
 
 ```
